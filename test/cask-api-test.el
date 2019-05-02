@@ -950,10 +950,10 @@
   (cask-test/with-bundle
       '((package "package-a" "0.0.1" "PACKAGE-A"))
     (should-not (cask-bundle-sources bundle))
-    (cask-add-source bundle "melpa" "https://melpa.org/packages/")
+    (cask-add-source bundle "melpa" "http://elpa.emacs-china.org/melpa/")
     (let ((source (car (cask-bundle-sources bundle))))
       (should (string= (cask-source-name source) "melpa"))
-      (should (string= (cask-source-url source) "https://melpa.org/packages/")))))
+      (should (string= (cask-source-url source) "http://elpa.emacs-china.org/melpa/")))))
 
 (ert-deftest cask-add-source-test/alias ()
   (cask-test/with-bundle
@@ -962,7 +962,7 @@
     (cask-add-source bundle 'melpa)
     (let ((source (car (cask-bundle-sources bundle))))
       (should (string= (cask-source-name source) "melpa"))
-      (should (string= (cask-source-url source) "https://melpa.org/packages/")))))
+      (should (string= (cask-source-url source) "http://elpa.emacs-china.org/melpa/")))))
 
 
 ;;;; cask-remove-source
